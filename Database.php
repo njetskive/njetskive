@@ -164,6 +164,9 @@ class Database {
 			// Set error mode
 			$this->DB->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			
+			// Use actual prepared statements
+			$this->DB->setAttribute( PDO::ATTR_EMULATE_PREPARES, false );
+			
 		}
 		catch( PDOException $e ) {
 			die( "ERROR: " . $e->getMessage() );
